@@ -1,0 +1,12 @@
+[package]
+name = "soniox-rs"
+version = "0.1.0"
+edition = "2024"
+description = "An unofficial Rust binding for Soniox API"
+readme = "README.md"
+repository = "https://github.com/merrkry/soniox-rs"
+license = "MIT"
+keywords = ["api", "soniox"]
+categories = ["api-bindings", "web-programming", "asynchronous"]
+
+[dependencies]
