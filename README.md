@@ -15,8 +15,8 @@ Status: work in progress.
     - [ ] Get file
     - [ ] Get files
     - [ ] Upload file
-  - [ ] Models
-    - [ ] Get models
+  - [x] Models
+    - [x] Get models
   - [ ] Transcriptions
     - [ ] Create transcription
     - [ ] Delete transcription
