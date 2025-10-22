@@ -13,4 +13,5 @@ categories = ["api-bindings", "web-programming", "asynchronous"]
 reqwest = "0.12.24"
 serde = "1.0.228"
 thiserror = "2.0.17"
+url = "2.5.7"
 uuid = { version = "1.18.1", features = ["serde"] }
