@@ -2,10 +2,7 @@ use http::StatusCode;
 use serde::de::DeserializeOwned;
 use url::Url;
 
-use crate::{
-    error::SonioxError,
-    models::error::{RawSonioxApiError, SonioxApiError},
-};
+use crate::{error::SonioxError, models::error::SonioxApiError};
 
 const DEFAULT_SONIOX_API_ENDPOINT: &str = "https://api.soniox.com";
 const DEFAULT_SONIOX_WEBSOCKET_ENDPOINT: &str = "wss://stt-rt.soniox.com/transcribe-websocket";
@@ -49,7 +46,7 @@ impl SonioxClient {
         })
     }
 
-    fn request_builder(
+    pub(crate) fn request_builder(
         &self,
         method: http::Method,
         path: &str,
@@ -58,7 +55,10 @@ impl SonioxClient {
         Ok(self.reqwest_client.request(method, url))
     }
 
-    async fn request_with_auth<T>(&self, req: reqwest::RequestBuilder) -> Result<T, SonioxError>
+    pub(crate) async fn request_with_auth<T>(
+        &self,
+        req: reqwest::RequestBuilder,
+    ) -> Result<T, SonioxError>
     where
         T: DeserializeOwned,
     {

@@ -7,8 +7,8 @@ An unofficial Rust binding for Soniox API.
 Status: work in progress.
 
 - [ ] REST API
-  - [ ] Auth
-    - [ ] Create temporary API key
+  - [x] Auth
+    - [x] Create temporary API key
   - [ ] Files
     - [ ] Delete file
     - [ ] Get file URL
