@@ -1,7 +1,7 @@
 use std::fmt::Display;
 
 /// Serializable structs for Sonix API errors.
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use thiserror::Error;
 use uuid::Uuid;
 
@@ -21,7 +21,7 @@ pub enum SonixApiError {
 
 /// Deserializable struct for error response from Sonix API.
 /// The same structure is used for all error types.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Deserialize)]
 pub struct RawSonioxApiError {
     pub status_code: StatusCode,
     pub error_type: String,
@@ -40,7 +40,7 @@ impl Display for RawSonioxApiError {
 // But consider using `http-serde`.
 pub type StatusCode = u16;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Deserialize)]
 pub struct ValidationError {
     pub error_type: String,
     pub location: String,
