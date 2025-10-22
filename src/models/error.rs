@@ -1,25 +1,29 @@
 use std::fmt::Display;
 
-/// Serializable structs for Sonix API errors.
+/// Serializable structs for Soniox API errors.
 use serde::Deserialize;
 use thiserror::Error;
 use uuid::Uuid;
 
 #[derive(Debug, Error)]
-pub enum SonixApiError {
+pub enum SonioxApiError {
     #[error("Invalid request: {0}")]
     InvalidRequest(RawSonioxApiError), // 400
+
     #[error("Authentication error: {0}")]
     AuthenticationError(RawSonioxApiError), // 401
+
     #[error("File not found: {0}")]
     FileNotFound(RawSonioxApiError), // 404
+
     #[error("Invalid transcription state: {0}")]
     InvalidTranscriptionState(RawSonioxApiError), // 409
+
     #[error("Internal server error: {0}")]
     InternalServerError(RawSonioxApiError), // 500
 }
 
-/// Deserializable struct for error response from Sonix API.
+/// Deserializable struct for error response from Soniox API.
 /// The same structure is used for all error types.
 #[derive(Debug, Deserialize)]
 pub struct RawSonioxApiError {
